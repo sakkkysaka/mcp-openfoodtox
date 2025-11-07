@@ -12,13 +12,13 @@ def prompt_feedback():
     print("\nIf you find this useful, please consider:")
     print("  ⭐ Starring the repo: https://github.com/spyrosze/mcp-openfoodtox")
     print("  💬 Leaving feedback: https://github.com/spyrosze/mcp-openfoodtox/discussions")
-    print("  👾 Contributors welcome: https://github.com/spyrosze/mcp-openfoodtox/discussions")
-    print("\nWould you like to open the feedback page now? (y/n): ", end="")
+    print("  👾 Contributors welcome: https://github.com/spyrosze/mcp-openfoodtox?tab=contributing-ov-file#readme")
+    print("\nWould you like to open the github repository now? (y/n): ", end="")
     
     response = input().strip().lower()
     if response in ['y', 'yes']:
-        webbrowser.open(DISCUSSIONS_URL)
-        print("Opened feedback page in your browser!")
+        webbrowser.open(GITHUB_REPO)
+        print("Opened github repository page in your browser!")
     print()
 
 if __name__ == "__main__":
